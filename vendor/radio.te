@@ -1,6 +1,9 @@
 # Misys
 allow radio hal_misys_hwservice:hwservice_manager find;
-allow radio hal_misys_hwservice:binder call;
+# Binder communication with misys
+allow radio hal_misys_hwservice:hwservice_manager find;
+allow radio hal_misys_default:binder call;
+hal_client_domain(radio, hal_misys)
 allow radio hal_misys_default:binder call;
 
 # Radio
